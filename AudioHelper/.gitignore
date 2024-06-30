@@ -13,7 +13,7 @@
 
 # Ignore everything under the Assets except the '_Project' folder
 Assets/*
-!Assets/_Nickle*
+!Assets/Strangeman*
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data

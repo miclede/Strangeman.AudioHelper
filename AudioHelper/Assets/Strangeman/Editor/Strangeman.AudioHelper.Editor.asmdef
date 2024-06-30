@@ -1,0 +1,18 @@
+{
+    "name": "Strangeman.AudioHelper.Editor",
+    "rootNamespace": "AudioHelper.Editor",
+    "references": [
+        "GUID:7922e4c2ec827254fbc5223a32009a56"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

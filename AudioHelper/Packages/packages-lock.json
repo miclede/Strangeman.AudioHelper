@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.strangeman.utils": {
+      "version": "file:C:/Projects/StrangemanGames/Strangeman.Utils/Assets/Strangeman",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.2d.animation": {
       "version": "10.1.1",
       "depth": 1,
