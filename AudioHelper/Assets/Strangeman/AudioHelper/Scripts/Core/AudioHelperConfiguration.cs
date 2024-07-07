@@ -33,7 +33,7 @@ namespace AudioHelper.Core
         {
             get
             {
-                if (_asset == null)
+                if (_asset is null)
                 {
                     _asset = Resources.Load<AudioHelperConfiguration>(k_audioHelperConfigName);
                 }

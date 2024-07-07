@@ -1,21 +1,22 @@
-﻿using Strangeman.Utils.Extensions;
-using Strangeman.Utils.Service;
+﻿using Strangeman.Utils.Service;
 using System;
 using UnityEngine;
 
 namespace AudioHelper.Core
 {
+    public enum AudioPositioningStyle { FollowTransform, ManualPosition }
+
     public class AudioBuilder
     {
         readonly AudioManager _audioManager;
         AudioData _audioData;
         Transform _followTransform;
         Vector3 _manualPosition = Vector3.zero;
+        Vector3 _offsetPosition = Vector3.zero;
         float _playDelay;
         int _repetitionCount;
         AudioEmitter _currentEmitter;
-
-        public enum PositioningStyle { FollowTransform, ManualPosition }
+        AudioPositioningStyle _positioningStyle;
 
         public AudioBuilder()
         {
@@ -38,7 +39,7 @@ namespace AudioHelper.Core
 
         public AudioBuilder WithAudioData(AudioData audioData)
         {
-            if (audioData == null)
+            if (audioData is null)
             {
                 throw new ArgumentException("AudioBuilder.WithAudioData: AudioData cannot be null.");
             }
@@ -59,24 +60,43 @@ namespace AudioHelper.Core
             return this;
         }
 
-        public void Play(PositioningStyle positioningStyle = PositioningStyle.FollowTransform)
+        public AudioBuilder WithOffset(Vector3 offset)
         {
+            _offsetPosition = offset;
+            return this;
+        }
+
+        public AudioBuilder WithPositioningStyle(AudioPositioningStyle audioPositioningStyle)
+        {
+            _positioningStyle = audioPositioningStyle;
+            return this;
+        }
+
+        public void Play()
+        {
+            if (_audioData is null)
+            {
+                Debug.LogError("AudioBuilder.Play: No AudioData has been assigned to this builder.");
+                return;
+            }
+
             try { if (!_audioManager.CanPlayAudio(_audioData)) return; }
             catch
             {
                 Debug.LogError("AudioBuilder.Play: Inaccessible AudioManager");
             }
-
-            Vector3 audioPosition = _followTransform.OrNull()?.position ?? _manualPosition;
-
             _currentEmitter = _audioManager.Get();
             _currentEmitter.Initialize(_audioData);
 
-            _currentEmitter.transform.position = positioningStyle is PositioningStyle.ManualPosition ? _manualPosition : audioPosition;
+            _currentEmitter.transform.parent = (_positioningStyle is AudioPositioningStyle.FollowTransform && _followTransform != null) 
+                ? _followTransform 
+                : _audioManager.transform;
 
-            _currentEmitter.transform.parent = _audioManager.transform;
+            _currentEmitter.transform.position = (_positioningStyle is AudioPositioningStyle.ManualPosition || _followTransform is null)
+                ? _manualPosition + _offsetPosition
+                : _followTransform.transform.position + _offsetPosition;
 
-            _audioManager.EmitterCounts[_audioData] = _audioManager.EmitterCounts.TryGetValue(_audioData, out var count) ? count + 1 : 1;
+            _audioManager.AddOrUpdateEmitterCount(_audioData);
             _currentEmitter.Play();
         }
 

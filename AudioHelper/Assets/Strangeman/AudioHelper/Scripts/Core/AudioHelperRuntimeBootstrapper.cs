@@ -9,7 +9,7 @@ namespace AudioHelper.Core
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void BootstrapAudioManager()
         {
-            if (AudioHelperConfiguration.Asset.ManagerPersistence == AudioManagerPersistence.RuntimeBootstrap)
+            if (AudioHelperConfiguration.Asset.ManagerPersistence is AudioManagerPersistence.RuntimeBootstrap)
             {
                 Object.DontDestroyOnLoad(Object.Instantiate(Resources.Load(k_bootstrapperPrefabName)));
 

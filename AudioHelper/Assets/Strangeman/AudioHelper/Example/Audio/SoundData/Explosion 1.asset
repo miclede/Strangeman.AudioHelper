@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c3aa82d914afa49aa55643c39affac, type: 3}
+  m_Name: Explosion 1
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: bed7e960aee81494b94e0b89ca3365ac, type: 3}
+  _mixerGroup: {fileID: 8023370737146950520, guid: f325c93274aac214f9d1ec6c321f9224, type: 2}
+  _loop: 0
+  _playOnAwake: 0
+  _bypassEffects: 0
+  _bypassListenerEffects: 0
+  _bypassReverbZones: 0
+  _frequentAudio: 0
+  _priority: 128
+  _volume:
+    MinSliderValue: 0.45351946
+    MaxSliderValue: 0.5663796
+  _pitch:
+    MinSliderValue: 1
+    MaxSliderValue: 1
+  _stereoPan:
+    MinSliderValue: 0
+    MaxSliderValue: 0
+  _spatialBlend:
+    MinSliderValue: 0
+    MaxSliderValue: 0
+  _reverbZoneMix:
+    MinSliderValue: 1
+    MaxSliderValue: 1
+  _dopplerLevel:
+    MinSliderValue: 1
+    MaxSliderValue: 1
+  _spread: 0
+  _volumeRollOffMode: 0
+  _customCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 10
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _minDistance: 1
+  _maxDistance: 500

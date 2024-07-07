@@ -62,6 +62,11 @@ namespace AudioHelper.Core
                 _audioConfig.MaxPoolSize);
         }
 
+        public void AddOrUpdateEmitterCount(AudioData audioData)
+        {
+            EmitterCounts[audioData] = EmitterCounts.TryGetValue(audioData, out var countForData) ? countForData + 1 : 0;
+        }
+
         #region Emitter ObjectPool Delegates
         private AudioEmitter CreateAudioEmitter()
         {

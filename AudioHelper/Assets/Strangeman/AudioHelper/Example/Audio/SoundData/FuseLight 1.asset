@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0c3aa82d914afa49aa55643c39affac, type: 3}
-  m_Name: ExampleData
+  m_Name: FuseLight 1
   m_EditorClassIdentifier: 
-  _clip: {fileID: 0}
-  _mixerGroup: {fileID: 0}
+  _clip: {fileID: 8300000, guid: fdd310f35721e8241a85b9cb7244ef06, type: 3}
+  _mixerGroup: {fileID: 8023370737146950520, guid: f325c93274aac214f9d1ec6c321f9224, type: 2}
   _loop: 0
   _playOnAwake: 0
   _bypassEffects: 0
   _bypassListenerEffects: 0
   _bypassReverbZones: 0
-  _frequentSound: 0
+  _frequentAudio: 0
   _priority: 128
   _volume:
-    MinSliderValue: 1
-    MaxSliderValue: 1
+    MinSliderValue: 0.7208197
+    MaxSliderValue: 0.8217998
   _pitch:
     MinSliderValue: 1
     MaxSliderValue: 1

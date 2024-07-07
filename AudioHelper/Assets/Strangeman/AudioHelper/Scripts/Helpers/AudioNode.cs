@@ -16,8 +16,8 @@ namespace AudioHelper.Audio
 
         private AudioBuilder _builtAudio;
 
-        public WaitForSeconds PlayDelayWaiter { get; private set; }
-        public WaitForSeconds ClipLengthWaiter { get; private set; }
+        public WaitForSeconds WaitPlayDelay { get; private set; }
+        public WaitForSeconds WaitClipLength { get; private set; }
 
         bool _initialized;
 
@@ -28,14 +28,14 @@ namespace AudioHelper.Audio
 
         public AudioNode Init()
         {
-            if (_audioData == null)
+            if (_audioData is null)
             {
                 Debug.LogError("AudioNode.Init: Attempted to initialize node with no Audio Data.");
                 return this;
             }
 
-            PlayDelayWaiter = new WaitForSeconds(_playDelay);
-            ClipLengthWaiter = new WaitForSeconds(_audioData.Clip.length);
+            WaitPlayDelay = new WaitForSeconds(_playDelay);
+            WaitClipLength = new WaitForSeconds(_audioData.Clip.length);
 
             _builtAudio = new AudioBuilder()
                 .WithAudioData(_audioData);
@@ -53,6 +53,12 @@ namespace AudioHelper.Audio
         public AudioNode With(Transform transform)
         {
             _builtAudio.WithTransform(transform);
+            return this;
+        }
+
+        public AudioNode With(AudioPositioningStyle audioPositioningStyle)
+        {
+            _builtAudio.WithPositioningStyle(audioPositioningStyle);
             return this;
         }
 

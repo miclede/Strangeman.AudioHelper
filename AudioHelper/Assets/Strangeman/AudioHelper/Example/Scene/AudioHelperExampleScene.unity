@@ -346,7 +346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1709475977
 Transform:
   m_ObjectHideFlags: 0
@@ -374,9 +374,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c564e91814023c3419c63f83f74f83a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <PlayOnStart>k__BackingField: 0
+  <PlayOnStart>k__BackingField: 1
+  _isFollowingTransform: 0
   _audioNode:
-    _audioData: {fileID: 0}
+    _audioData: {fileID: 11400000, guid: 820b6190ceba4ca4499909c26a591968, type: 2}
     _playDelay: 0
     _repeats: 0
     _repetitionCount: 0
@@ -396,7 +397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1948001835
 Transform:
   m_ObjectHideFlags: 0
@@ -424,8 +425,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7abea4005198546b115a0eb3f17961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <PlayOnStart>k__BackingField: 0
-  _playList: []
+  <PlayOnStart>k__BackingField: 1
+  _isFollowingTransform: 1
+  _overridePlayDelayWithClipDuration: 1
+  _playList:
+  - _audioData: {fileID: 11400000, guid: 820b6190ceba4ca4499909c26a591968, type: 2}
+    _playDelay: 0
+    _repeats: 0
+    _repetitionCount: 0
+  - _audioData: {fileID: 11400000, guid: c62a7a58fa4062b4aa4f82e138a60ad8, type: 2}
+    _playDelay: 0
+    _repeats: 0
+    _repetitionCount: 0
+  - _audioData: {fileID: 11400000, guid: 934df44f5ea3e2d47add0bc6b71a730b, type: 2}
+    _playDelay: 0
+    _repeats: 0
+    _repetitionCount: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

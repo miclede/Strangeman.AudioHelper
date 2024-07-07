@@ -6,6 +6,7 @@ namespace AudioHelper.Audio
     public abstract class AudioNodePlayer : MonoBehaviour, IPlayAudio
     {
         [field: SerializeField] public bool PlayOnStart { get; set; }
+        [SerializeField] protected bool _isFollowingTransform = false;
 
         protected virtual void Start()
         {
@@ -13,6 +14,8 @@ namespace AudioHelper.Audio
             {
                 Play();
             }
+
+            UpdateFollowTransform(_isFollowingTransform);
         }
 
         public abstract void Play();
@@ -20,5 +23,10 @@ namespace AudioHelper.Audio
         public abstract IEnumerator PlayCoroutine();
 
         public abstract void Stop();
+
+        public virtual void UpdateFollowTransform(bool value)
+        {
+            _isFollowingTransform = value;
+        }
     }
 }

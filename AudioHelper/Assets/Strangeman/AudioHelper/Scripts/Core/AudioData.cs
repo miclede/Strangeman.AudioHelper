@@ -64,7 +64,7 @@ namespace AudioHelper.Core
         private float SliderReturnValue(MinMaxSliderValue sliderValue) => _frequentAudio ? Random.Range(sliderValue.MinSliderValue, sliderValue.MaxSliderValue) : sliderValue;
 
 #if UNITY_EDITOR
-        private bool IsCustomRolloffSelected() => _volumeRollOffMode == AudioRolloffMode.Custom;
+        private bool IsCustomRolloffSelected() => _volumeRollOffMode is AudioRolloffMode.Custom;
 #endif
     }
 }
