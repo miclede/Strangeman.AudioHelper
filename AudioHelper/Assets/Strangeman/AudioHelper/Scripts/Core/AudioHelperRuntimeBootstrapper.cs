@@ -4,14 +4,14 @@ namespace AudioHelper.Core
 {
     public static class AudioHelperRuntimeBootstrapper
     {
-        const string k_bootstrapperPrefabName = "AudioManagerPersistence";
-
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void BootstrapAudioManager()
         {
-            if (AudioHelperConfiguration.Asset.ManagerPersistence is AudioManagerPersistence.RuntimeBootstrap)
+            AudioHelperConfiguration config = AudioHelperConfiguration.Asset;
+
+            if (config.ManagerPersistence is AudioManagerPersistence.RuntimeBootstrap)
             {
-                Object.DontDestroyOnLoad(Object.Instantiate(Resources.Load(k_bootstrapperPrefabName)));
+                Object.DontDestroyOnLoad(Object.Instantiate(config.AudioManagerPersistencePrefab));
 
                 Debug.Log("AudioHelperRuntimeBootstrapper.BootstrapAudioManager: Initialized Persistence.");
             }

@@ -36,6 +36,8 @@ namespace AudioHelper.Core
         [SerializeField, Conditional(false, nameof(IsCustomRolloffSelected))] private int _minDistance = 1;
         [SerializeField] private int _maxDistance = 500;
 
+        [SerializeField] private bool _ignoreAudioListenerPause; 
+
         public AudioClip Clip => _clip;
         public AudioMixerGroup MixerGroup => _mixerGroup;
 
@@ -60,6 +62,8 @@ namespace AudioHelper.Core
         public AnimationCurve CustomCurve => _customCurve;
         public int MinDistance => _minDistance;
         public int MaxDistance => _maxDistance;
+
+        public bool IgnoreAudioListenerPause => _ignoreAudioListenerPause;
 
         private float SliderReturnValue(MinMaxSliderValue sliderValue) => _frequentAudio ? Random.Range(sliderValue.MinSliderValue, sliderValue.MaxSliderValue) : sliderValue;
 

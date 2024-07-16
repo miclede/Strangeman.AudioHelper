@@ -13,6 +13,7 @@ namespace AudioHelper.Core
     public class AudioHelperConfiguration : ScriptableObject
     {
         [SerializeField] private AudioManagerPersistence _managerPersistence;
+        [SerializeField] private GameObject _audioManagerPersistencePrefab;
         [SerializeField] private AudioEmitter _audioEmitterPrefab;
         [SerializeField] private bool _collectionCheck = true;
         [SerializeField] private int _defaultCapacity = 10;
@@ -20,6 +21,7 @@ namespace AudioHelper.Core
         [SerializeField] private int _maxAudioInstances = 30;
 
         public AudioManagerPersistence ManagerPersistence => _managerPersistence;
+        public GameObject AudioManagerPersistencePrefab => _audioManagerPersistencePrefab;
         public AudioEmitter AudioEmitterPrefab => _audioEmitterPrefab;
         public bool CollectionCheck => _collectionCheck;
         public int DefaultCapacity => _defaultCapacity;
