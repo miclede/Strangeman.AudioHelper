@@ -85,6 +85,8 @@ namespace AudioHelper.Core
 
             if (data.VolumeRollOffMode == AudioRolloffMode.Custom)
                 _audioSource.SetCustomCurve(AudioSourceCurveType.CustomRolloff, data.CustomCurve);
+
+            _audioSource.ignoreListenerPause = data.IgnoreAudioListenerPause;
         }
     }
 }
