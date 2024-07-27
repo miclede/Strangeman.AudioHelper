@@ -1,11 +1,7 @@
-## [1.0.0] - 2024-07-04
+## [1.0.0] - 2024-07-27
 ### First Release
-- Has Services, Bootstrapping, Component Extensions, Attributes for Runtime
-- Contains Drawers for: ConditionalProperty & MinMaxSlider for Editor
-- Contains Subsystem Registration for ClearFieldsWithAttribute (ClearOnLoad) - for statics
-
-## [1.0.1] - 2024-07-05
-## Hotfix
-- Added OrNull to ComponentExtensions
-- Removed null coalescing operator from ComponentExtensions when attempting to grab initial Component, replaced with ternary conditional operators
-- Components using ComponentExtensions can now use null coalescing for gameobjects, see documentation for details
+- Pooled Audio Sources
+- Simple Helpers for getting audio up quickly in: Animations, Monobehaviours, Builder
+- Data first approach to audio configuration
+- Global bootstrapper with selectable persistence types
+- Menu integrations for key features
