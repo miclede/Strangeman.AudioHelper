@@ -1,16 +1,18 @@
 {
-    "name": "com.strangeman.utils",
-    "version": "1.0.1",
+    "name": "com.strangeman.audiohelper",
+    "version": "1.0.0",
     "keywords": [
-      "extension",
+      "audio",
+      "sound",
       "attribute",
       "editor",
-      "design-pattern"
+      "design-pattern",
+      "object-pool"
     ],
-    "category": "project dependency",
-    "displayName": "Strangeman",
-    "description": "This package primarily provides dependencies to the Strangeman Helper packages.",
-    "documentationUrl": "miclede.github.io/documentation",
+    "category": "Unity Helper",
+    "displayName": "Strangeman Audio",
+    "description": "Strangeman.AudioHelper: this package primarily provides simple helper solutions for optimized and pooled Audio management in Unity.",
+    "documentationUrl": "Coming Soon",
     "author": {
       "name": "Michael L'Estrange",
       "email": "michael@strangeman.games",
