@@ -5,3 +5,9 @@
 - Data first approach to audio configuration
 - Global bootstrapper with selectable persistence types
 - Menu integrations for key features
+
+## [1.1.0] - 2024-07-28
+### Feature Addition: Editor Setup Wizard
+- Removed the persistent prefab, the better solution is to just use one manager prefab
+- Added an editor window under Tools/Strangeman/Setup Audio Helper
+- Editor window includes a directory pointer, a button to create starter assets for customization, and a button to get the example scene from the package

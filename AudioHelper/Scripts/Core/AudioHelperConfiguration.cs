@@ -28,7 +28,7 @@ namespace AudioHelper.Core
         public int MaxPoolSize => _maxPoolSize;
         public int MaxAudioInstances => _maxAudioInstances;
 
-        private const string k_audioHelperConfigName = "AudioHelperConfig";
+        public const string k_audioHelperConfigName = "AudioHelperConfig";
 
         private static AudioHelperConfiguration _asset;
         public static AudioHelperConfiguration Asset
@@ -42,5 +42,10 @@ namespace AudioHelper.Core
                 return _asset;
             }
         }
+
+#if UNITY_EDITOR
+        public void SetManagerPersistencePrefab(GameObject persistencePrefab) => _audioManagerPersistencePrefab = persistencePrefab;
+        public void SetAudioEmitterPrefab(AudioEmitter emitterPrefab) => _audioEmitterPrefab = emitterPrefab;
+#endif
     }
 }

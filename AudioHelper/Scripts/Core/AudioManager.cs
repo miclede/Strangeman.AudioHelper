@@ -18,9 +18,13 @@ namespace AudioHelper.Core
 
         protected override void Awake()
         {
-            if (_audioConfig == null)
+            if (_audioConfig is null && AudioHelperConfiguration.Asset != null)
             {
                 _audioConfig = AudioHelperConfiguration.Asset;
+            }
+            else if (AudioHelperConfiguration.Asset is null)
+            {
+                Debug.LogError($"AudioManager.Awake: No Audio Helper Configuration file found, please run: Tools/Strangeman/Initialize Audio Helper");
             }
 
             if (_audioConfig.ManagerPersistence == AudioManagerPersistence.ScenePersistence)
@@ -107,5 +111,9 @@ namespace AudioHelper.Core
             Destroy(emitter.gameObject);
         }
         #endregion
+
+#if UNITY_EDITOR
+        public void SetAudioConfigAsset(AudioHelperConfiguration configAsset) => _audioConfig = configAsset;
+#endif
     }
 }

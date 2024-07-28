@@ -42,8 +42,15 @@ Option 3: .unitpackage from releases:
 https://github.com/miclede/Strangeman.AudioHelper/releases
 ```
 
+Step 3: After Import (optional).
+- Navigate to Tools/Strangeman/Setup Audio Helper
+- Choose your project Directory
+- Press Create Assets
+- Press Get Example Scene
+
+
 ## Example
-If you are having issues viewing the example scene through the Package Manager or manifest installation routes: drag the scene out of the package (this will make a copy) into Assets or a child folder of Assets.
+If you are having issues viewing the example scene through the package directory: use the setup wizard (Tools/Strangeman/Setup Audio Helper) "Get Example Scene."
 
 <!------>
 [ChangelogBadge]: https://img.shields.io/badge/Changelog-light
