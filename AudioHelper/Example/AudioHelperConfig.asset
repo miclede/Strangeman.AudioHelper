@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ba2027fd524ba4fbd887bcea42e564, type: 3}
   m_Name: AudioHelperConfig
   m_EditorClassIdentifier: 
-  _managerPersistence: 2
-  _audioManagerPersistencePrefab: {fileID: 4852929610114632300, guid: facb1aa0a9147d14eb61ea526bec7ba1, type: 3}
-  _audioEmitterPrefab: {fileID: 0}
+  _managerPersistence: 0
+  _audioManagerPersistencePrefab: {fileID: 8299901642424630582, guid: 0756eaea2010b0844ac21be30fb43d4b, type: 3}
+  _audioEmitterPrefab: {fileID: 7261540476207591783, guid: 5aa2d624403734a4b838f89638158bd1, type: 3}
   _collectionCheck: 1
   _defaultCapacity: 10
   _maxPoolSize: 100
