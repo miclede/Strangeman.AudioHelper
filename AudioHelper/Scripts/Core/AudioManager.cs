@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.Pool;
 using Strangeman.Utils.Service;
+using UnityEngine.SceneManagement;
+using System;
+using System.Linq;
 
 namespace AudioHelper.Core
 {
@@ -15,6 +18,26 @@ namespace AudioHelper.Core
         [SerializeField] AudioHelperConfiguration _audioConfig;
 
         const string k_audioManagerName = "Audio Manager [Service]";
+
+        private void OnEnable()
+        {
+            SceneManager.sceneLoaded += StopSoundOnSceneLoad;
+        }
+
+        private void StopSoundOnSceneLoad(Scene scene, LoadSceneMode mode)
+        {
+            if (!_audioConfig.StopAudioOnSceneLoad)
+            {
+                return;
+            }
+
+            if (_audioConfig.AllowsAudioOnLoad.FirstOrDefault(x => x.SceneName == scene.name) == default)
+            {
+                return;
+            }
+
+            StopAllEmitters();
+        }
 
         protected override void Awake()
         {
@@ -71,6 +94,8 @@ namespace AudioHelper.Core
             EmitterCounts[audioData] = EmitterCounts.TryGetValue(audioData, out var countForData) ? countForData + 1 : 0;
         }
 
+        public void StopAllEmitters() => _activeAudioEmitters.ForEach(x => x.Stop());
+
         #region Emitter ObjectPool Delegates
         private AudioEmitter CreateAudioEmitter()
         {
@@ -111,6 +136,11 @@ namespace AudioHelper.Core
             Destroy(emitter.gameObject);
         }
         #endregion
+
+        private void OnDisable()
+        {
+            SceneManager.sceneLoaded -= StopSoundOnSceneLoad;
+        }
 
 #if UNITY_EDITOR
         public void SetAudioConfigAsset(AudioHelperConfiguration configAsset) => _audioConfig = configAsset;
