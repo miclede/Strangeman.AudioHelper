@@ -1,3 +1,5 @@
+using Strangeman.Utils;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace AudioHelper.Core
@@ -19,6 +21,8 @@ namespace AudioHelper.Core
         [SerializeField] private int _defaultCapacity = 10;
         [SerializeField] private int _maxPoolSize = 100;
         [SerializeField] private int _maxAudioInstances = 30;
+        [SerializeField] private bool _stopAudioOnSceneLoad = true;
+        [SerializeField] private List<SceneField> _allowsAudioOnLoad = new();
 
         public AudioManagerPersistence ManagerPersistence => _managerPersistence;
         public GameObject AudioManagerPersistencePrefab => _audioManagerPersistencePrefab;
@@ -27,6 +31,8 @@ namespace AudioHelper.Core
         public int DefaultCapacity => _defaultCapacity;
         public int MaxPoolSize => _maxPoolSize;
         public int MaxAudioInstances => _maxAudioInstances;
+        public bool StopAudioOnSceneLoad => _stopAudioOnSceneLoad;
+        public List<SceneField> AllowsAudioOnLoad => _allowsAudioOnLoad;
 
         public const string k_audioHelperConfigName = "AudioHelperConfig";
 
