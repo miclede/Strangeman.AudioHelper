@@ -4,6 +4,7 @@ namespace AudioHelper.Core
 {
     public static class AudioHelperRuntimeBootstrapper
     {
+        //Creates AudioManager if the config's persistence is set to RuntimeBootstrap, will create and persist before first scene is loaded
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void BootstrapAudioManager()
         {

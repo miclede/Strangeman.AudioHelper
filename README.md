@@ -1,12 +1,9 @@
 # Strangeman.AudioHelper
-[![ChangelogBadge]](CHANGELOG.md) [![GitHub package.json version]][ReleasesLink] [![InstallationBadge]](#installation)
+[![GitHub package.json version]][ReleasesLink] [![ChangelogBadge]](CHANGELOG.md) [![InstallationBadge]](#installation) [![WikiBadge]][WikiLink]
 
+This package provides a comprehensive data-first audio management solution designed to streamline and optimize audio operations in Unity.
 
-This package provides a simple data-first Audio Source & Sound management solution for Unity.
-
-The package will be updated as I implement new features and fix issues.
-
-Feel free to browse the online documentation (under development 2024.7.27) and create your own projects using this as a resource. While it is not required to state that a product / project is using this solution, I would like to shout-out those that do.
+Feel free to browse the online documentation and create your own projects using this as a resource. While it is not required to state that a product / project is using this solution, I would like to shout-out those that do.
 
 ## Planned Features
 - Split Screen Support: Essentially multi-listener functionality
@@ -17,7 +14,7 @@ Feel free to browse the online documentation (under development 2024.7.27) and c
 - More examples: Will create more examples as more features are finished.
 
 ## Dependency
-https://github.com/miclede/Strangeman.Utils
+[![UtilsBadge]][UtilsLink]
 
 ## Installation
 Option 1: Add to Unity from Package Manager:
@@ -55,6 +52,11 @@ If you are having issues viewing the example scene through the package directory
 <!------>
 [ChangelogBadge]: https://img.shields.io/badge/Changelog-light
 [GitHub package.json version]: https://img.shields.io/github/package-json/v/miclede/Strangeman.AudioHelper
+
 [InstallationBadge]: https://img.shields.io/badge/Installation-red
+[WikiBadge]: https://img.shields.io/badge/Documentation-purple
+[UtilsBadge]: https://img.shields.io/badge/Strangeman.Utils-darkred
 
 [ReleasesLink]: https://github.com/miclede/Strangeman.AudioHelper/releases/latest
+[WikiLink]: https://github.com/miclede/Strangeman.AudioHelper/wiki
+[UtilsLink]: https://github.com/miclede/Strangeman.Utils

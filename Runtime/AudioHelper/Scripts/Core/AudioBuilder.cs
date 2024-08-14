@@ -14,7 +14,7 @@ namespace AudioHelper.Core
         Vector3 _manualPosition = Vector3.zero;
         Vector3 _offsetPosition = Vector3.zero;
         float _playDelay;
-        int _repetitionCount;
+        int _repetetionCount;
         AudioEmitter _currentEmitter;
         AudioPositioningStyle _positioningStyle;
 
@@ -23,10 +23,11 @@ namespace AudioHelper.Core
             ServiceLocator.Global.GetMonoService(out _audioManager);
         }
 
+        #region Fluid Builder Self-Referentials
         public AudioBuilder WithRepetition(int repCount)
         {
             int count = repCount < 0 ? 0 : repCount;
-            _repetitionCount = count;
+            _repetetionCount = count;
             return this;
         }
 
@@ -71,7 +72,9 @@ namespace AudioHelper.Core
             _positioningStyle = audioPositioningStyle;
             return this;
         }
+        #endregion
 
+        // Build Equivalent
         public void Play()
         {
             if (_audioData is null)
@@ -100,12 +103,14 @@ namespace AudioHelper.Core
             _currentEmitter.Play();
         }
 
+        // Helper that is accessible should you want to stop the audio related to this specific build
         public void Stop()
         {
             if (_currentEmitter.isActiveAndEnabled)
                 _currentEmitter.Stop();
         }
 
-        private bool NeedCoroutine() => (_playDelay > 0 || _repetitionCount > 0);
+        //Noop TODO: Repetitions on builder level with async and cancelation on stop
+        private bool NeedCoroutine() => (_playDelay > 0 || _repetetionCount > 0);
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "com.strangemangames.audiohelper",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "keywords": [
     "audio",
     "sound",
@@ -12,7 +12,7 @@
   "category": "audio management",
   "displayName": "Strangeman Audio",
   "description": "Strangeman.AudioHelper: this package primarily provides simple helper solutions for optimized and pooled Audio management in Unity.",
-  "documentationUrl": "Coming Soon",
+  "documentationUrl": "https://github.com/miclede/Strangeman.AudioHelper/wiki",
   "author": {
     "name": "Michael L'Estrange",
     "email": "michael@strangeman.games",

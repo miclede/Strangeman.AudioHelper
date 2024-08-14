@@ -1,4 +1,5 @@
 using Strangeman.Utils;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace AudioHelper.Core
         RuntimeBootstrap
     }
     
+    //Create from Tools/Strangeman/Audio Helper Wizard
     //[CreateAssetMenu(menuName = "Audio/Audio Helper Config", fileName = k_audioHelperConfigName)]
     public class AudioHelperConfiguration : ScriptableObject
     {
@@ -43,7 +45,9 @@ namespace AudioHelper.Core
             {
                 if (_asset is null)
                 {
-                    _asset = Resources.Load<AudioHelperConfiguration>(k_audioHelperConfigName);
+                    var assetAtPath = Resources.Load<AudioHelperConfiguration>(k_audioHelperConfigName);
+
+                    _asset = assetAtPath != null ? assetAtPath : throw new NullReferenceException("AudioHelperConfiguration.Asset: no asset in Resources folder, please create.");
                 }
                 return _asset;
             }

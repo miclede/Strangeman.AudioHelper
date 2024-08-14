@@ -10,7 +10,7 @@ namespace AudioHelper.Editor
     /// <summary>
     /// Editor window for setting up the Audio Helper in a Unity project.
     /// </summary>
-    public class AudioHelperWizard : EditorWindow
+    public class AudioHelperCreationWizard : EditorWindow
     {
         string _audioEmitterPath = "Packages/com.strangemangames.audiohelper/AudioHelper/Prefabs/AudioEmitter.prefab";
         string _audioManagerPath = "Packages/com.strangemangames.audiohelper/AudioHelper/Prefabs/AudioManager.prefab";
@@ -216,7 +216,7 @@ namespace AudioHelper.Editor
             EditorUtility.FocusProjectWindow();
             Selection.activeObject = asset;
 
-            Debug.Log("AudioHelperConfiguration ScriptableObject created successfully at: " + assetPathAndName);
+            Debug.Log("AudioHelperConfiguration ScriptableObject successfully created at: " + assetPathAndName);
         }
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace AudioHelper.Editor
         /// <summary>
         /// Opens the Audio Helper setup wizard.
         /// </summary>
-        [MenuItem("Tools/Strangeman/Setup Audio Helper")]
+        [MenuItem("Tools/Strangeman/Audio Helper Creation Wizard")]
         private static void OpenInstructionWindow()
         {
             if (IsSetupCompleted())
@@ -264,8 +264,8 @@ namespace AudioHelper.Editor
                 return;
             }
 
-            AudioHelperWizard window = (AudioHelperWizard)GetWindow(typeof(AudioHelperWizard));
-            window.titleContent = new GUIContent("Audio Setup Wizard");
+            AudioHelperCreationWizard window = (AudioHelperCreationWizard)GetWindow(typeof(AudioHelperCreationWizard));
+            window.titleContent = new GUIContent("Audio Helper Creation Wizard");
 
             window.minSize = new Vector2(475, 238);
             window.maxSize = new Vector2(476, 239);

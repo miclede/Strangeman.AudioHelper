@@ -7,28 +7,28 @@ namespace AudioHelper.Core
     [CreateAssetMenu(fileName = "$NEWAudioData", menuName = "Audio/Audio Data")]
     public class AudioData : ScriptableObject
     {
-        //dependency
+        // Audio Clip and Mixer Group
         [SerializeField] private AudioClip _clip;
         [SerializeField] private AudioMixerGroup _mixerGroup;
 
-        //bool flags
+        // Playback settings
         [SerializeField] private bool _loop = false;
         [SerializeField] private bool _playOnAwake = false;
         [SerializeField] private bool _bypassEffects = false;
         [SerializeField] private bool _bypassListenerEffects = false;
         [SerializeField] private bool _bypassReverbZones = false;
-        [SerializeField] private bool _frequentAudio = false;
+        [SerializeField] private bool _frequentAudio = false; // If true, will use Min Max range on sliders for sound variance
 
         [SerializeField, Range(0, 256)] private int _priority = 128;
 
-        //Good source of variable settings
+        // Adjustable Ranges
         [SerializeField, MinMaxSlider(0, 1)] private MinMaxSliderValue _volume = 1f;
         [SerializeField, MinMaxSlider(-3, 3)] private MinMaxSliderValue _pitch = 1f;
         [SerializeField, MinMaxSlider(-1, 1)] private MinMaxSliderValue _stereoPan = 0;
         [SerializeField, MinMaxSlider(0, 1)] private MinMaxSliderValue _spatialBlend = 0;
         [SerializeField, MinMaxSlider(0, 1.1f)] private MinMaxSliderValue _reverbZoneMix = 1f;
 
-        //3D settings
+        // Spatial settings and Rolloff
         [SerializeField, MinMaxSlider(0, 5)] private MinMaxSliderValue _dopplerLevel = 1;
         [SerializeField, Range(0, 360)] private int _spread = 0;
         [SerializeField] private AudioRolloffMode _volumeRollOffMode;
@@ -36,8 +36,9 @@ namespace AudioHelper.Core
         [SerializeField, Conditional(false, nameof(IsCustomRolloffSelected))] private int _minDistance = 1;
         [SerializeField] private int _maxDistance = 500;
 
-        [SerializeField] private bool _ignoreAudioListenerPause; 
+        [SerializeField] private bool _ignoreAudioListenerPause;
 
+        #region Public Accessors
         public AudioClip Clip => _clip;
         public AudioMixerGroup MixerGroup => _mixerGroup;
 
@@ -64,6 +65,7 @@ namespace AudioHelper.Core
         public int MaxDistance => _maxDistance;
 
         public bool IgnoreAudioListenerPause => _ignoreAudioListenerPause;
+        #endregion
 
         private float SliderReturnValue(MinMaxSliderValue sliderValue) => _frequentAudio ? Random.Range(sliderValue.MinSliderValue, sliderValue.MaxSliderValue) : sliderValue;
 
