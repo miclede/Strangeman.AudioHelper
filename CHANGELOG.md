@@ -1,3 +1,8 @@
+## [1.3.2] 2024-11-01
+### Organization Update: Packaging & Folders
+- Updating Package information and folder structure
+- Better integration with other strangeman packages
+
 ## [1.2.2] 2024-08-14
 ### Documentation Update: Package & Script
 - Updated documentation

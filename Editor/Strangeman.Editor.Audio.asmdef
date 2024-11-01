@@ -1,0 +1,19 @@
+{
+    "name": "com.strangeman.editor.audio",
+    "rootNamespace": "AudioHelper.Editor",
+    "references": [
+        "GUID:a5358283307d1a149b9f3266af67608d",
+        "GUID:a25ed39339fc99242bf77557845d6947"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

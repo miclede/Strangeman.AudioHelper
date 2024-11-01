@@ -1,5 +1,5 @@
 # Strangeman.AudioHelper
-[![GitHub package.json version]][ReleasesLink] [![ChangelogBadge]](CHANGELOG.md) [![InstallationBadge]](#installation) [![WikiBadge]][WikiLink]
+[![GitHub package.json version]](#installation) [![ChangelogBadge]](CHANGELOG.md) [![InstallationBadge]](#installation) [![WikiBadge]][WikiLink]
 
 This package provides a comprehensive data-first audio management solution designed to streamline and optimize audio operations in Unity.
 
@@ -17,7 +17,7 @@ Feel free to create your own projects using this as a resource. While it is not 
 [![UtilsBadge]][UtilsLink]
 
 ## Installation
-Option 1: Add to Unity from Package Manager:
+Add to Unity from Package Manager:
 
 Step 1.
 ```
@@ -25,18 +25,7 @@ https://github.com/miclede/Strangeman.Utils.git
 ```
 Step 2.
 ```
-https://github.com/miclede/Strangeman.AudioHelper.git
-```
-
-Option 2: from manifest.json:
-```
-"com.strangemangames.utils": "https://github.com/miclede/Strangeman.Utils.git",
-"com.strangemangames.audiohelper": "https://github.com/miclede/Strangeman.AudioHelper.git"
-```
-
-Option 3: .unitypackage from releases:
-```
-https://github.com/miclede/Strangeman.AudioHelper/releases
+https://github.com/miclede/Strangeman.Audio.git
 ```
 
 Step 3: After Import (optional).
@@ -57,6 +46,5 @@ If you are having issues viewing the example scene through the package directory
 [WikiBadge]: https://img.shields.io/badge/Documentation-purple
 [UtilsBadge]: https://img.shields.io/badge/Strangeman.Utils-darkred
 
-[ReleasesLink]: https://github.com/miclede/Strangeman.AudioHelper/releases/latest
 [WikiLink]: https://github.com/miclede/Strangeman.AudioHelper/wiki
 [UtilsLink]: https://github.com/miclede/Strangeman.Utils
